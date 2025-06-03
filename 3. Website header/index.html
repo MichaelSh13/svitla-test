@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Website tests</title>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<script>
+			fetch('/back-button.html')
+				.then(res => res.text())
+				.then(html => {
+					document.body.insertAdjacentHTML('afterbegin', html);
+				});
+		</script>
+		
+		<main>
+			<section class="main">
+				<div class="main-back-image"></div>
+				
+				<div class="main-container">
+					<header>
+						<div class="header-container">
+							<label class="burger-label">
+								<button class="burger">
+									<div class="burger__line"></div>
+									<div class="burger__line"></div>
+									<div class="burger__line"></div>
+								</button>
+				
+								<p class="burger-text">Menu</p>
+							</label>
+				
+							<div class="link-box language">
+								<a href="#" class="link language__item active-lang">ENG</a>
+								<a href="#" class="link language__item">FR</a>
+							</div>
+						</div>
+					</header>
+
+					<div></div>
+					
+					<div class="main__info-container">
+						<div class="info">
+							<div class="info-top">
+								<p>Summer <br> Collection <br> 2020</p>
+							</div>
+	
+							<div class="info-bottom">
+								<span class="info-bottom__next">Next</span>
+								<hr class="separator info-bottom__separator" />
+								<span class="info-bottom__previous">Previous</span>
+							</div>
+						</div>
+						
+						<div class="info__title">
+							<h1>Summer <br> 2020</h1>
+						</div>
+					</div>
+	
+					<div class="main__social">
+						<div class="link-box social">
+							<a href="#" class="link social__item">FB</a>
+							<a href="#" class="link social__item">PIN</a>
+							<a href="#" class="link social__item">IG</a>
+						</div>
+	
+						<div class="social-dot">
+							<span class="dot__item"></span>
+							<span class="dot__item"></span>
+							<span class="dot__item"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="photo-section">
+				<div class="photo__container">
+					<div class="photo__side-info">
+						<div class="side-info__container">
+							<span class="side-info__text">Ref. 6687/787</span>
+							<hr class="separator side-info__separator" />
+							<span class="side-info__text">White loose dress</span>
+						</div>
+					</div>
+	
+					<div class="photo__first">
+						<img src="./images/second.jpg" alt="#" class="first__photo">
+					</div>
+					<div class="photo__second">
+						<img src="./images/third.jpg" alt="#" class="second__photo">
+	
+						<button class="shop-now">
+							Shop now
+						</button>
+					</div>
+				</div> 
+			</section>
+		</main>
+	</body>
+</html>

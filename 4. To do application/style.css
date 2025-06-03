@@ -1,0 +1,204 @@
+@font-face {
+  font-family: 'AwanZaman Heavy';
+  font-style: normal;
+  font-weight: normal;
+  src: local('AwanZaman Heavy'), url('./fonts/AwanZaman Heavy.ttf') format('ttf');
+}
+
+:root {
+  --primary: #676374;
+  --description: #abb1e1;
+  --secondary: #c4bfcb;
+  --hr: #f5f6fa;
+  --success: #00ce6b;
+  --error-code: 206, 0, 0;
+  --error: rgba(var(--error-code), 1);
+  --background: white;
+  --shadow-code: 0, 0, 0;
+  --shadow: rgba(var(--shadow-code), .2);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: border-box;
+  background-color: #f0efe9;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'AwanZaman Heavy', sans-serif;
+  position: relative;
+}
+p, h1, h2, h3, h4, h5 h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.todo {
+  background-color: var(--background);
+  padding: 1em;
+  position: relative;
+  box-shadow: 0 .1em .2em var(--shadow);
+  width: 16em;
+}
+.todo__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: .2em solid var(--hr);
+  margin: 0 -1em;
+  gap: 1em;
+  padding: 1em 0 1.6em 0;
+}
+.todo__title {
+  color: var(--primary);
+}
+.todo__description {
+  color: var(--description);
+  font-size: .8em;
+}
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+  padding-right: .5em;
+  margin: 1.6em -.5em 1.6em -.4em;
+  max-height: 20em;
+  overflow: auto;
+}
+.todo__list::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+.todo__list::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 1px;
+}
+.todo__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background: none;
+  font-size: 1em;
+  color: var(--primary);
+  cursor: pointer;
+  padding: .4em;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.todo__item:hover {
+  background-color: rgba(var(--shadow-code), .05);
+}
+.todo__item:hover .todo__item-title {
+  text-decoration: line-through;
+  transform: translateX(1.8em);
+  width: calc(100% - 3.8em);
+  flex: none;
+}
+.todo__item-delete {
+  position: absolute;
+  left: 0.4em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  width: 1.8em;
+  height: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--error);
+  color: var(--error);
+  background-color: rgba(var(--error-code), .1);
+  border-radius: .5em;
+}
+.todo__item-delete:hover {
+  color: var(--hr);
+  background-color: rgba(var(--error-code), .3);
+}
+.todo__item:hover .todo__item-delete {
+  opacity: 1;
+}
+.todo__item-title {
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+  transition: transform 0.2s ease;
+}
+.todo__item--completed .todo__item-title {
+  text-decoration: line-through;
+  color: var(--secondary);
+}
+.todo__item--completed .todo__item-action {
+  color: var(--success);
+}
+.todo__item-action {
+  display: flex;
+}
+.todo__item-action .icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+.icon--smile {
+  color: var(--success);
+}
+.icon--neutral {
+  color: var(--secondary);
+}
+.todo__form {
+  display: flex;
+  margin-bottom: 2em;
+}
+.todo__input {
+  flex: 1;
+  border: 1px solid var(--secondary);
+  color: var(--primary);
+  outline: none;
+  padding: 1em;
+  font-size: 1em;
+}
+.todo__input::placeholder {
+  color: var(--secondary);
+}
+.todo__add {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+.todo__add-button {
+  background-color: var(--success);
+  border: none;
+  border-radius: 2em;
+  color: white;
+  padding: .5em 2.5em;
+  box-shadow: 0 .1em .2em var(--shadow);
+  cursor: pointer;
+  transition: all ease .2s;
+}
+.todo__add-button:hover {
+  box-shadow: 0 .2em .6em rgba(var(--shadow-code), .6);
+  transition: all ease .2s;
+}
+.todo__add-button:active {
+  box-shadow: none;
+  transform: scale(.9);
+  transition: all ease .2s;
+}
+.todo__empty {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  color: var(--primary);
+}

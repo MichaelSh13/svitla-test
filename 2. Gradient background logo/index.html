@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Website tests</title>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<script>
+			fetch('/back-button.html')
+				.then(res => res.text())
+				.then(html => {
+					document.body.insertAdjacentHTML('afterbegin', html);
+				});
+		</script>
+		
+		<div class="btn-container">
+			<button class="btn-bing btn-bing__hover">
+				<img class="btn-bing__logo" src="logo.svg" alt="bing">
+	
+				<p class="btn-bing__text">Bing</p>
+			</button>
+	
+			<label class="btn-label">
+				<button class="btn-bing btn-bing__animation">
+					<div class="btn-bing__background"></div>
+					
+					<img class="btn-bing__logo" src="logo.svg" alt="bing" draggable="false">
+		
+					<p class="btn-bing__text">Bing</p>
+				</button>
+			</label>
+		</div>
+	</body>
+</html>

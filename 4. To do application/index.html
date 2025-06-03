@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Website tests</title>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<script>
+			fetch('/back-button.html')
+				.then(res => res.text())
+				.then(html => {
+					document.body.insertAdjacentHTML('afterbegin', html);
+				});
+		</script>
+
+		
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<symbol id="icon-smile" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+				<circle cx="8" cy="10" r="1.5" stroke="none" fill="currentColor"/>
+				<circle cx="16" cy="10" r="1.5" stroke="none" fill="currentColor"/>
+				<path d="M7 14c1.5 3 7.5 3 9 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</symbol>
+
+			<symbol id="icon-neutral" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+				<circle cx="8" cy="10" r="1.5" stroke="none" fill="currentColor"/>
+				<circle cx="16" cy="10" r="1.5" stroke="none" fill="currentColor"/>
+				<line x1="8" y1="15" x2="16" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</symbol>
+		</svg>
+		
+		<div class="todo">
+			<div class="todo__header">
+				<h1 class="todo__title">
+					Month Name
+				</h1>
+				
+				<div class="todo__description">
+					Some info about date
+				</div>
+			</div>
+
+			<div class="todo__list">
+				<!-- Example of the structure -->
+				<!-- <div as="button" class="todo__item">
+					<button class="todo__item-delete">✖</button>
+					<p class="todo__item-title">Buy new sweatshirt</p>
+					<p class="todo__item-action">
+						<svg class="icon icon--neutral">
+							<use href="#icon-smile"></use>
+						</svg>
+					</p>
+				</div> -->
+			</div>
+			
+			<div class="todo__empty" >No tasks yet</div>
+
+			<form action="" class="todo__form">
+				<input class="todo__input" type="text" placeholder="Add Task" maxlength="250">
+
+				<div class="todo__add">
+					<button class="todo__add-button">
+						Add
+					</button>
+				</div>
+			</form>
+		</div>
+
+		<script src="./index.js"></script>
+	</body>
+</html>

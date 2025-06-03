@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Website tests</title>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<script>
+			fetch('/back-button.html')
+				.then(res => res.text())
+				.then(html => {
+					document.body.insertAdjacentHTML('afterbegin', html);
+				});
+		</script>
+		
+		<nav>
+			<ul class="nav">
+				<li><a class="nav-link" href="#">Animation</a></li>
+				<li><a class="nav-link nav-link-active" href="#">Branding</a></li>
+				<li><a class="nav-link" href="#">Illustration</a></li>
+			</ul>
+		</nav>
+
+		<script>
+			const navLinks = document.querySelectorAll('.nav-link');
+
+			navLinks.forEach(link => {
+			  link.addEventListener('click', (e) => {
+			    e.preventDefault();
+			    navLinks.forEach(l => l.classList.remove('nav-link-active'));
+			    link.classList.add('nav-link-active');
+			  });
+			});
+		</script>
+	</body>
+</html>
