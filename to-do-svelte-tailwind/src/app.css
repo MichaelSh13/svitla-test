@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'AwanZaman Heavy';
+  font-style: normal;
+  font-weight: normal;
+  src: local('AwanZaman Heavy'), url('./fonts/AwanZaman Heavy.ttf') format('ttf');
+}
+
+
+@theme {
+  --color-primary: #676374;
+  --color-description: #abb1e1;
+  --color-secondary: #c4bfcb;
+  --color-hr: #f5f6fa;
+  --color-success: #00ce6b;
+  --color-error: rgba(206, 0, 0, 1);
+  --color-error-bg: rgba(206, 0, 0, .1);
+  --color-shadow: rgba(0, 0, 0, .2);
+
+  /* --shadow-todo: 0 .1em .2em rgba(0, 0, 0, .2);
+  --shadow-hover: 0 .2em .6em rgba(0, 0, 0, .6); */
+
+  --width-todo: 16em;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0efe9;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'AwanZaman Heavy', sans-serif;
+    position: relative;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+    border-radius: 1px;
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
