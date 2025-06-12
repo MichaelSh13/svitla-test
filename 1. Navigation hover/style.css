@@ -54,3 +54,8 @@ body {
   border-color: white !important;
   background-color: rgba(255, 255, 255, .5) !important;
 }
+
+.nav-link:focus-visible {
+  outline: 2px solid #4B9EF5;
+  outline-offset: 2px;
+}

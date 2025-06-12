@@ -6,6 +6,12 @@
 		<title>Website tests</title>
 
 		<link rel="stylesheet" href="./style.css" />
+		<style>
+			.link:focus-visible, .burger:focus-visible, .shop-now:focus-visible {
+				outline: 2px solid #4B9EF5;
+				outline-offset: 2px;
+			}
+		</style>
 	</head>
 	<body>
 		<script>
@@ -21,24 +27,26 @@
 				<div class="main-back-image"></div>
 				
 				<div class="main-container">
-					<header>
-						<div class="header-container">
-							<label class="burger-label">
-								<button class="burger">
-									<div class="burger__line"></div>
-									<div class="burger__line"></div>
-									<div class="burger__line"></div>
-								</button>
-				
-								<p class="burger-text">Menu</p>
-							</label>
-				
-							<div class="link-box language">
-								<a href="#" class="link language__item active-lang">ENG</a>
-								<a href="#" class="link language__item">FR</a>
+					<nav role="navigation">
+						<header>
+							<div class="header-container">
+								<label class="burger-label">
+									<button class="burger">
+										<div class="burger__line"></div>
+										<div class="burger__line"></div>
+										<div class="burger__line"></div>
+									</button>
+					
+									<p class="burger-text">Menu</p>
+								</label>
+					
+								<div class="link-box language">
+									<a href="#" class="link language__item active-lang" tabindex="0" aria-current="page">ENG</a>
+									<a href="#" class="link language__item" tabindex="0">FR</a>
+								</div>
 							</div>
-						</div>
-					</header>
+						</header>
+					</nav>
 
 					<div></div>
 					
@@ -62,9 +70,9 @@
 	
 					<div class="main__social">
 						<div class="link-box social">
-							<a href="#" class="link social__item">FB</a>
-							<a href="#" class="link social__item">PIN</a>
-							<a href="#" class="link social__item">IG</a>
+							<a href="#" class="link social__item" tabindex="0">FB</a>
+							<a href="#" class="link social__item" tabindex="0">PIN</a>
+							<a href="#" class="link social__item" tabindex="0">IG</a>
 						</div>
 	
 						<div class="social-dot">

@@ -350,6 +350,9 @@ section.photo-section {
   .side-info__container {
     font-size: 1.5em;
   }
+  .language {
+    --text-rgb: 255, 255, 255;
+  }
 }
 
 /* md */

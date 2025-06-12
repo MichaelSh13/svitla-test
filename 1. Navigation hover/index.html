@@ -1,48 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Website tests</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-		<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
-  </head>
-  <body class="m-0 h-screen bg-[radial-gradient(ellipse_at_bottom,_#010841,_#00172b)] flex items-center justify-center font-['Segoe_UI',sans-serif]">
-    <script>
-      fetch('/back-button.html')
-        .then(res => res.text())
-        .then(html => {
-          document.body.insertAdjacentHTML('afterbegin', html);
-        });
-    </script>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Website tests</title>
 
-    <nav>
-      <ul class="flex list-none gap-3">
-        <li><a class="nav-link flex items-center justify-center text-white/40 hover:text-white py-4 px-6 relative font-medium transition-all ease-in-out" href="#">Animation</a></li>
-        <li><a class="nav-link flex items-center justify-center text-white py-4 px-6 relative font-medium transition-all ease-in-out transition-all" href="#">Branding</a></li>
-        <li><a class="nav-link flex items-center justify-center text-white/40 hover:text-white py-4 px-6 relative font-medium transition-all ease-in-out" href="#">Illustration</a></li>
-      </ul>
-    </nav>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<script>
+			fetch('/back-button.html')
+				.then(res => res.text())
+				.then(html => {
+					document.body.insertAdjacentHTML('afterbegin', html);
+				});
+		</script>
+		
+		<nav role="navigation">
+			<ul class="nav">
+				<li><a class="nav-link" href="#" tabindex="0">Animation</a></li>
+				<li><a class="nav-link nav-link-active" href="#" tabindex="0" aria-current="page">Branding</a></li>
+				<li><a class="nav-link" href="#" tabindex="0">Illustration</a></li>
+			</ul>
+		</nav>
 
-    <script>
-      const navLinks = document.querySelectorAll('.nav-link');
-			const activeLinkClass = "after:content-[''] after:absolute after:bottom-0 after:w-2/5 after:rounded-2xl after:border-2 after:border-white";
-			
-			navLinks[1].classList = [...navLinks[1].classList, activeLinkClass].join(' ');
-			
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          navLinks.forEach(l => {
-						l.classList = [...l.classList].filter((c) => !c.includes('after:')).join(' ')
-					});
+		<script>
+			const navLinks = document.querySelectorAll('.nav-link');
 
-					// console.log(link.classList)
-          // link.classList.add('nav-link-active');
-
-					link.classList = [...link.classList, activeLinkClass].join(' ');
-        });
-      });
-    </script>
-  </body>
+			navLinks.forEach(link => {
+			  link.addEventListener('click', (e) => {
+			    e.preventDefault();
+			    navLinks.forEach(l => l.classList.remove('nav-link-active'));
+			    link.classList.add('nav-link-active');
+			  });
+			});
+		</script>
+	</body>
 </html>

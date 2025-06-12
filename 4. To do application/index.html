@@ -44,11 +44,11 @@
 				</div>
 			</div>
 
-			<div class="todo__list">
+			<div class="todo__list" role="list" aria-label="To-do list">
 				<!-- Example of the structure -->
-				<!-- <div as="button" class="todo__item">
-					<button class="todo__item-delete">✖</button>
-					<p class="todo__item-title">Buy new sweatshirt</p>
+				<!-- <div role="listitem" tabindex="0" class="todo__item">
+					<button class="todo__item-delete" aria-label="Delete task">✖</button>
+					<p class="todo__item-title" aria-hidden="true">Buy new sweatshirt</p>
 					<p class="todo__item-action">
 						<svg class="icon icon--neutral">
 							<use href="#icon-smile"></use>
@@ -59,11 +59,11 @@
 			
 			<div class="todo__empty" >No tasks yet</div>
 
-			<form action="" class="todo__form">
-				<input class="todo__input" type="text" placeholder="Add Task" maxlength="250">
+			<form action="" class="todo__form" aria-label="Add new task form">
+				<input class="todo__input" type="text" placeholder="Add Task" maxlength="250" aria-label="New task title" aria-required="true">
 
 				<div class="todo__add">
-					<button class="todo__add-button">
+					<button class="todo__add-button" aria-label="Add task">
 						Add
 					</button>
 				</div>

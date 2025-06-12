@@ -42,6 +42,8 @@ const reactiveTasks = new Proxy(tasks, {
 const createItem = (title, completed, index) => {
   const item = document.createElement('button');
   item.classList.add('todo__item');
+  item.setAttribute('role', 'listitem');
+  item.setAttribute('tabindex', '0');
   item.dataset.id = index;
   
   if (completed) item.classList.add('todo__item--completed');
@@ -49,10 +51,12 @@ const createItem = (title, completed, index) => {
   const deleteBtn = document.createElement('button');
   deleteBtn.classList.add('todo__item-delete');
   deleteBtn.textContent = '✖';
+  deleteBtn.setAttribute('aria-label', 'Delete task');
 
   const titleEl = document.createElement('p');
   titleEl.classList.add('todo__item-title');
   titleEl.textContent = title;
+  titleEl.setAttribute('aria-hidden', 'true');
 
   const actionEl = document.createElement('p');
   actionEl.classList.add('todo__item-action');
