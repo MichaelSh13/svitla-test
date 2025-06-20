@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Karlotte Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Karlotte Regular'), url('/fonts/Karlotte-MVq0x.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Karlotte Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Karlotte Italic'), url('/fonts/KarlotteItalic-K7DoD.woff') format('woff');
+}
+
+:root {
+  @apply text-white/80;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  @apply overflow-x-hidden;
+}
+
+@theme {
+  --font-title: 'Karlotte Regular', serif;
+}
